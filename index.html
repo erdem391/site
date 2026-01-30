@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Giriş</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: url("arka-plan.png") no-repeat center center/cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+    }
+
+    .login-box {
+        background: rgba(0,0,0,0.6);
+        padding: 30px;
+        border-radius: 12px;
+        text-align: center;
+        color: white;
+        z-index: 2;
+    }
+
+    .title {
+        font-size: 32px;
+        margin-bottom: 20px;
+        color: #ff4fd8;
+        text-shadow:
+            0 0 5px #ff4fd8,
+            0 0 10px #ff4fd8,
+            0 0 20px #ff4fd8;
+        font-weight: bold;
+    }
+
+    input {
+        width: 200px;
+        padding: 10px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 6px;
+    }
+
+    button {
+        margin-top: 10px;
+        padding: 10px 25px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .overlay-image {
+        position: fixed;
+        inset: 0;
+        background: url("son-gorsel.png") no-repeat center center/contain;
+        background-color: black;
+        display: none;
+        z-index: 5;
+    }
+</style>
+</head>
+<body>
+
+<div class="login-box">
+    <div class="title">TUĞÇE OLGUNA BİAT EDİN</div>
+    <input type="text" id="username" placeholder="İsim"><br>
+    <input type="password" id="password" placeholder="Şifre"><br>
+    <button onclick="login()">Giriş</button>
+</div>
+
+<div class="overlay-image" id="overlay"></div>
+
+<script>
+function login() {
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+
+    if (user === "admin" && pass === "admin123") {
+        document.getElementById("overlay").style.display = "block";
+    } else {
+        alert("Yanlış girdin gardaş 😄");
+    }
+}
+</script>
+
+</body>
+</html>
